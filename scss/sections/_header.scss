@@ -4,16 +4,18 @@ header {
     background-color: $main-bg-color;
     min-height: 8vh;
     div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexbox {
+            justify-content: space-between;
+            align-items: center;
+        };
         h1 {
             width: 60%;
             color: $menu-font-color;
+            font-size: 1.3vw;
             font-weight: 600;
             span {
-                color: $main-accent-color;
-                font-weight: 800;
+                font-size: 1.3vw;
+                @include logo-accent-span;
             }
         }
         nav {
@@ -21,10 +23,12 @@ header {
             color: $menu-font-color;
             ul {
                 list-style: none;
-                display: flex;
-                align-items: center;
+                @include flexbox {
+                    align-items: center;
+                }
                 li {
                     height: 8vh;
+                    font-size: 1.3vw;
                     font-weight: 600;
                     width: 100%;
                     text-align: center;
@@ -55,8 +59,9 @@ header {
     .submenu-content {
         width: 100%;
         background-color: $main-bg-color;
-        display: flex;
-        flex-direction: column;
+        @include flexbox {
+            flex-direction: column;
+        }
         position: absolute;
         top: 100%;
         li {
