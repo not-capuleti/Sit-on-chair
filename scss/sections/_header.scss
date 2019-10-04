@@ -1,8 +1,11 @@
 @import "../variables";
+@import "../mixins";
+@import "../reset";
+@import "../typography";
+@import "../container";
 
 header {
     background-color: $main-bg-color;
-    min-height: 8vh;
     div {
         @include flexbox {
             justify-content: space-between;

@@ -45,7 +45,7 @@
     color: #ffffff;
     text-decoration: none;
     &:hover, &:focus {
-        background:darken($bg,8%);
+        background:darken($bg,10%);
         transition: all 0.3s ease;
         border: 1px solid $bg;
         color: #ffffff;
@@ -54,4 +54,14 @@
     &:active {
         background:darken($bg,25%);
     } 
+}
+
+@mixin accent-underline {
+    &:after {
+        content: "";
+        display: block;
+        border-top: .6vw solid $main-accent-color;
+        width: 40%;
+        @content;
+    }
 }

@@ -1,0 +1,60 @@
+@import "../variables";
+@import "../mixins";
+@import "../reset";
+@import "../typography";
+@import "../container";
+
+.products {
+    .presentation {
+        background: $products-bg-color;
+        margin: $body-container-margin;
+        padding: 3rem 3rem;
+        @include flexbox {
+            justify-content: space-between;
+            align-items: center;
+        }
+        > * {
+            padding: 0 .5rem;
+        }
+        .photobox-wrap {
+            width: 100%;
+            position: relative;
+            img {
+                width: 100%;
+                max-width: 330px;
+            }
+            .name-of-chair {
+                position: absolute;
+                width: 100%;
+                width: 100%;
+                background: $photobox-title-bg-color;
+                bottom: 10%;
+                padding: 1vw 0;
+                @include accent-underline;
+                p {
+                    padding: .1vw 0;
+                    font-weight: 600;
+                    font-size: 1.3vw;
+                }
+            }
+        }
+        .product-box {
+            border: 1px solid rgb(211,211,211);
+            .product-box-title {
+                font-size: 1.3vw;
+                font-weight: 600;
+                position: relative;
+                padding: 1vw 0;
+                @include accent-underline {
+                    position: absolute;
+                    top: 2.3vw;
+                }
+            }
+            .product-box-text {
+                font-size: 1.2vw;
+                padding: 1vw 0;
+                line-height: 1.3;
+            }
+        }
+    }
+}
