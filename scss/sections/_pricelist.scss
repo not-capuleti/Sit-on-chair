@@ -3,3 +3,22 @@
 @import "../reset";
 @import "../typography";
 @import "../container";
+
+.pricelist {
+  .container {
+    background-color: $second-bg-color;
+    margin: $body-container-margin;
+    @include small-media {
+      margin: 0;
+      padding: 0;
+    }
+    h2 {
+      @include h2-style;
+      padding-top: 6vh;
+      padding-bottom: 2vh;
+      @include accent-underline {
+        width: 30%;
+      }
+    }
+  }
+}

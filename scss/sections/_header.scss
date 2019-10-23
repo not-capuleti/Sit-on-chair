@@ -10,12 +10,15 @@ header {
         @include flexbox {
             justify-content: space-between;
             align-items: center;
-        };
+        }
         h1 {
             width: 60%;
             color: $menu-font-color;
             font-size: 1.3vw;
             font-weight: 600;
+            @include small-media {
+                display: none;
+            }
             span {
                 font-size: 1.3vw;
                 @include logo-accent-span;
@@ -23,6 +26,9 @@ header {
         }
         nav {
             width: 40%;
+            @include small-media {
+                width: 100vw;
+            }
             color: $menu-font-color;
             ul {
                 list-style: none;
@@ -32,6 +38,9 @@ header {
                 li {
                     height: 8vh;
                     font-size: 1.3vw;
+                    @include small-media {
+                        font-size: 2.5vw;
+                    }
                     font-weight: 600;
                     width: 100%;
                     text-align: center;

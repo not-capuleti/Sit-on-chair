@@ -10,13 +10,22 @@
     @include flexbox {
         align-items: center;
     }
+    @include small-media {
+        margin: 0;
+    }
     .banner {
         padding-top: 5vw;
         padding-bottom: 5vw;
         @include flexbox {
             align-items: center;
         }
+        @include small-media {
+            display: inline-block;
+        }
         .left-arrow, .right-arrow {
+            @include small-media {
+                display: none;
+            }
             padding: 0;
             i {
                 color: $main-accent-color;
@@ -26,6 +35,9 @@
         .img-wrap {
             width: 100%;
             margin: auto;
+            @include small-media {
+                display: none;
+            }
             img { 
                 width: 100%;
                 max-width: 470px;
@@ -39,9 +51,15 @@
                 flex-direction: column;
                 align-items: center;
             }
+            @include small-media {
+                padding: 0;
+            }
             h2 {
                 text-align: center;
                 font-size: 3vw;
+                @include small-media {
+                    font-size: 5vw;
+                }
                 span {
                     @include logo-accent-span;
                 }
@@ -51,9 +69,15 @@
                 text-align: center;
                 line-height: 1.5;
                 padding: 1.5vw 0;
+                @include small-media {
+                    font-size: 2.5vw;
+                }
             }
             .more {
                 @include button-style($main-accent-color, 1.5vw);
+                @include small-media {
+                    @include button-style($main-accent-color, 2.5vw) 
+                }
             }
         }
     }

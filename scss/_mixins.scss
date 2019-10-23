@@ -1,67 +1,136 @@
 @mixin fontawesome($size: false, $colour: false, $weight: false) {
-    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-    @if $size { font-size: $size; }
-    @if $colour { color: $colour; }
-    @if $weight { font-weight: $weight; }
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  @if $size {
+    font-size: $size;
+  }
+  @if $colour {
+    color: $colour;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+@mixin h2-style {
+  color: $h2-font-color;
+  font-size: 4vh;
+  font-weight: 600;
 }
 
 @mixin flexbox {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    @content;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  @content;
 }
 
 @mixin logo-accent-span {
-        color: $main-accent-color;
-        font-weight: 800;
+  color: $main-accent-color;
+  font-weight: 800;
 }
 
 @mixin carousel-bg-color {
-    background: rgba(254,254,254,1);
-    background: -moz-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 7%, rgba(254,254,254,1) 16%, rgba(254,254,254,1) 39%, rgba(219,219,219,1) 71%, rgba(209,209,209,1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,254,254,1)), color-stop(7%, rgba(254,254,254,1)), color-stop(16%, rgba(254,254,254,1)), color-stop(39%, rgba(254,254,254,1)), color-stop(71%, rgba(219,219,219,1)), color-stop(100%, rgba(209,209,209,1)));
-    background: -webkit-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 7%, rgba(254,254,254,1) 16%, rgba(254,254,254,1) 39%, rgba(219,219,219,1) 71%, rgba(209,209,209,1) 100%);
-    background: -o-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 7%, rgba(254,254,254,1) 16%, rgba(254,254,254,1) 39%, rgba(219,219,219,1) 71%, rgba(209,209,209,1) 100%);
-    background: -ms-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 7%, rgba(254,254,254,1) 16%, rgba(254,254,254,1) 39%, rgba(219,219,219,1) 71%, rgba(209,209,209,1) 100%);
-    background: linear-gradient(to bottom, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 7%, rgba(254,254,254,1) 16%, rgba(254,254,254,1) 39%, rgba(219,219,219,1) 71%, rgba(209,209,209,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#d1d1d1', GradientType=0 );
+  background: rgba(254, 254, 254, 1);
+  background: -moz-linear-gradient(
+    top,
+    rgba(254, 254, 254, 1) 0%,
+    rgba(254, 254, 254, 1) 7%,
+    rgba(254, 254, 254, 1) 16%,
+    rgba(254, 254, 254, 1) 39%,
+    rgba(219, 219, 219, 1) 71%,
+    rgba(209, 209, 209, 1) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    left bottom,
+    color-stop(0%, rgba(254, 254, 254, 1)),
+    color-stop(7%, rgba(254, 254, 254, 1)),
+    color-stop(16%, rgba(254, 254, 254, 1)),
+    color-stop(39%, rgba(254, 254, 254, 1)),
+    color-stop(71%, rgba(219, 219, 219, 1)),
+    color-stop(100%, rgba(209, 209, 209, 1))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(254, 254, 254, 1) 0%,
+    rgba(254, 254, 254, 1) 7%,
+    rgba(254, 254, 254, 1) 16%,
+    rgba(254, 254, 254, 1) 39%,
+    rgba(219, 219, 219, 1) 71%,
+    rgba(209, 209, 209, 1) 100%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(254, 254, 254, 1) 0%,
+    rgba(254, 254, 254, 1) 7%,
+    rgba(254, 254, 254, 1) 16%,
+    rgba(254, 254, 254, 1) 39%,
+    rgba(219, 219, 219, 1) 71%,
+    rgba(209, 209, 209, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(254, 254, 254, 1) 0%,
+    rgba(254, 254, 254, 1) 7%,
+    rgba(254, 254, 254, 1) 16%,
+    rgba(254, 254, 254, 1) 39%,
+    rgba(219, 219, 219, 1) 71%,
+    rgba(209, 209, 209, 1) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(254, 254, 254, 1) 0%,
+    rgba(254, 254, 254, 1) 7%,
+    rgba(254, 254, 254, 1) 16%,
+    rgba(254, 254, 254, 1) 39%,
+    rgba(219, 219, 219, 1) 71%,
+    rgba(209, 209, 209, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#d1d1d1', GradientType=0 );
 }
 
-
 @mixin button-style($bg, $font-size) {
-    background: $bg;
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    padding: .7em 2em;
+  background: $bg;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.7em 2em;
+  border: 1px solid $bg;
+  border-radius: 0.5em;
+  font-family: "Raleway", sans-serif;
+  font-size: $font-size;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    background: darken($bg, 10%);
+    transition: all 0.3s ease;
     border: 1px solid $bg;
-    border-radius: .5em;
-    font-family: 'Raleway', sans-serif;
-    font-size: $font-size;
-    font-weight: 600;
     color: #ffffff;
     text-decoration: none;
-    &:hover, &:focus {
-        background:darken($bg,10%);
-        transition: all 0.3s ease;
-        border: 1px solid $bg;
-        color: #ffffff;
-        text-decoration: none;
-    }
-    &:active {
-        background:darken($bg,25%);
-    } 
+  }
+  &:active {
+    background: darken($bg, 25%);
+  }
 }
 
 @mixin accent-underline {
-    &:after {
-        content: "";
-        display: block;
-        border-top: .6vw solid $main-accent-color;
-        width: 40%;
-        @content;
-    }
+  &:after {
+    content: "";
+    display: block;
+    border-top: 0.6vw solid $main-accent-color;
+    width: 40%;
+    @content;
+  }
+}
+
+// breakpoints
+
+@mixin small-media {
+  @media (max-width: 767px) {
+    @content;
+  }
 }
